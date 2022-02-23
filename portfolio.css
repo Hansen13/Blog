@@ -39,6 +39,7 @@ body {
   padding: 20px;
   margin-top: 20px;
   border-color: black;
+  width: 100%;
 }
 
 /* Clear floats after the columns */
