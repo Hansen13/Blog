@@ -6,10 +6,12 @@ body {
 
 /* Header/Blog Title */
 .header {
+    margin-top: 30px;
   padding: 30px;
   font-size: 40px;
   text-align: center;
   background: white;
+  border: 1px solid;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -39,7 +41,8 @@ body {
   padding: 20px;
   margin-top: 20px;
   border-color: black;
-  width: 100%;
+  border: 1px solid;
+  border-radius: 25px;
 }
 
 /* Clear floats after the columns */
