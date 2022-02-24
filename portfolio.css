@@ -46,6 +46,14 @@ body {
   border-radius: 25px;
 }
 
+.imageFrame{
+  background-color: lightgray;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

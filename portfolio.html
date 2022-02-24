@@ -28,8 +28,61 @@
     <div class="leftcolumn">
         <div class="card">
             <h2>IT-sikkerhed indlæg</h2>
-            <h5>Jason web tokens og andre guards</h5>
-            <p> Jeg vil se på hvordan jwt virker og hvorfor man bruger det</p>
+            <h4>Jason web tokens og andre guards</h4>
+            <p> Jeg vil se på hvordan JASON web token(jwt) virker og hvorfor man bruger det</p>
+            <p>
+                Helt kort, så er en Jwt et jason object man bruger til at sende data sikkert over nettet
+                til en anden part. I Rento projektet bruger vi den til godkendelse af brugere
+            </p>
+            <p>
+                En jwt består af en header, payload og en signatur
+            </p>
+            <h3>Header</h3>
+            
+            <p>
+                Headeren beskriver hvilken cryptografisk operation, den er lavet til en
+                base64URL, forskellen på en base64 og base64Url, er at base64url fjerner
+                tegn som har specielle betydninger i en browser som fx "/", "+" og "=".
+                På den måde vil en browser ikke misforstå betydningen af strengen.
+            
+                På billedet ses en simpel header, "alg" og "typ"
+            
+                "typ" fortæller hvilken type information denne header indeholder. "alg"
+                fortæller hvilken kryptering der er brugt, de 2 oftes brugt er HS256 og
+                RS256, en jwt kan også laves uden men betegnes som en usikker jwt. Her vil
+                væriden i "alg" sættes til "none".
+            </p>
+            <div class="imageFrame">
+            
+                <img src="assets\images\jwtHeader.PNG" alt="jwtHeaderImage">
+            </div>
+            <h3>payload</h3>
+            <p>
+                I payloaden står alt generlt bruger data, som ses på billedet her under.
+                Det er læseligt for alle, så ingen sensitiv information burde gives med her
+            
+            
+            
+            </p>
+            <div class="imageFrame">
+            
+                <img src="assets\images\jwtpayload.PNG" alt="jwtPayloadImage">
+            </div>
+            <h3>Signatur</h3>
+            <p>
+                Sidste del af en jwt er signaturen, bruges til at verificere autenticiteten af
+                den jwt man har fået tilsendt. Den er hashed med en hemmelighed.
+                Til sidst sættes den sammen med payload og headeren. Hermed har man en komplet jwt
+            </p>
+            
+            
+            <h4>Kilder</h4>
+            <ul>
+                <li><a
+                        href="https://www.geeksforgeeks.org/json-web-token-jwt/">https://www.geeksforgeeks.org/json-web-token-jwt/</a>
+                </li>
+                <li><a href="https://www.base64url.com/">https://www.base64url.com/</a></li>
+            </ul>
         </div>
     </div>
 </div>
@@ -38,13 +91,49 @@
     <div class="leftcolumn">
         <div class="card">
             <h2>Projektstyring indlæg</h2>
-            <h5> Projekt styrings værktøj "Clickup"</h5>
+            <h4> Projekt styrings værktøj "Clickup"</h4>
             <p> Jeg vil se på hvordan clickup virker, og gå i dybden på hvordan det virker, og hvilke
                 problemstillinger det løser
 Tidligere i uddannelsen har jeg brugt Trello som mit projekstyrings værktøj, det fungere okay
 men var meget begrænset i hvad det mere kunne.
 
+</p>
+<p>
+    Det Clickup tilbyder er næsten alle former for opgave visninger, og det er nemt at skifte imellem dem.
+    Fx kan man starte med et mindmap, finde ud af hvad projektet skal indeholde af forskellige elementer.
+    Derefter kan den så lave det mindmap om til et kanban board eller liste af opgaver direkte uden at
+    skulle skrive noget ekstra.
+</p>
+En ting clickup gør super godt er tidsestimering, hvis vi tager et udgangspunkt i en liste af opgaver
+så kan man tidsestimere hver opgave. Når man har tidsestimeret hele sit projekt kan man få en,
+total værdi på hvor lang tid ens projekt burde tage ud fra den tidsestimering man har lavet.
+</p>
+<p>
+    Så kan man lave et estimat på hvor mange effektive timer man har, og med de to tal, kan man sådan ca regne ud
+    hvornår man vil være færdig med projektet. Især ved programmerings projekter, vil kunden selvfølgelig gerne
+    vide hvor meget de skal betale for projektet.
+
+</p>
+
+<p>
+    Man kan også nemt sætte forskellige teams op til forskellige dele af et projekt. Så kan man sætte
+    springs op, og tildele de forskellige teams opgaver, de individuelle folk på hvert team kan så hoppe,
+    på en opgave og bruge clickups tidstagnings værktøj. Når man er færdig med en opgave, kan man stoppe tiden,
+    og så hvor lang tid man har brugt. Så kan man selv se hvor meget tid den er estimeret til og hvor
+    lang tid man har brugt på den.
+</p>
+<p>
+    Efter fx en uge, kan man sige om man er bagud eller foran på projektet. Her kan man
+    se om man vil holde planen eller om man skal ændre den løbende
+</p>
+
+<p>
+    Derfor gør clickup projekstyring rigtig nem, og overskuelig.
             </p>
+            <h4>Kilder</h4>
+            <ul>
+                <li><a href="https://clickup.com"> https://clickup.com/</a></li>
+            </ul>
         </div>
     </div>
 </div>
@@ -68,6 +157,10 @@ Rento
 
             
             </p>
+            <h4>Kilder</h4>
+            <ul>
+                <li><a href="https://littlegiants.dk/"> https://littlegiants.dk/</a></li>
+            </ul>
         </div>
     </div>
 </div>
