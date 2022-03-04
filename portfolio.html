@@ -28,14 +28,77 @@
     <div class="leftcolumn">
         <div class="card">
             <h2>IT-sikkerhed indlæg</h2>
-            <h5></h5>
-            <h4></h4>
-            <p></p>
+            <h5>04/23/22</h5>
+            <h4>Hashing algoritmer for passwords</h4>
+            <p>Når man snakker om passwords, så skal de idag helst ikke gemmes som plaintekst. Hvis en hacker får adgang til ens database med passwords, så kan han ikke direkte tilgå brugers 
+              kontorer da han ikke kan logge ind, hvis alle passwords er blevet hashet. 
+              
+              Kigger vi på nogle hashing algoritmer, så har vi sha256, problemet med den, er at den er "hurtig" ifølge security <sup><a href="#footnotes">[1]</a></sup> kan en enkelt GPU 
+              kører over 10.323.000.000 gæt pr sekund ved hjælp af brute force. Med den hastighed, vil det ca tage 80 dage at lave alle kombinationer med 8 karaktere.
+              De beskriver også hvordan nogen har lavet en cluster med 25 GPU'er som kan lave 350 billioner gæt pr sekund. Hvilket betyder at de kan regne alle 8 password kombinationer ud på 
+              lige under 6 timer<sup><a href="#footnotes">[2]</a></sup>. Man vil selvfølgelig bruge salt, så det kun er 1 password de vil regne ud og ikke hele databasen.
+            </p>
+            <p>
+                Det man skal bruge til password hashing er bcrypt, også kaldt for defacto sikkerheds standard inden for password hashing<sup><a href="#footnotes">[1]</a></sup>.
+                Det er også den hashing teknik det little giants bruger, Som er det firma jeg tager mit 4 semester ved.
+
+                Det som skiller bcrypt ud fra sha256 er at den er langsom, meget langsom. Med sha256 kan der fx laves 10 billioner gæt i sekundet, så kan der ifølge 
+                "epixoip" <sup><a href="#footnotes">[3]</a></sup> fra github laves 3.613,81 gæt i sekundet hvis man bruger 8 GTX TitanX, som på daværende tidspunkt var verdens hurtigste grafik kort, og bruger bcrypts kost faktor på 10. 
+
+                <div class="imageFrame">
+                    <img src="assets\images\Bcrypt-hashes-in-seconds.PNG" alt="Bcrypt-hashes-in-seconds">
+                </div>
+            </p>
+
+            <p>
+                Men hvad er en "kost faktor"? Den måde bcrypt virker på, er at have mange look-up tabeller. Det er derfor den også er langsom, for hver kost faktor man stiger, tager det dobbelt
+                så lang tid at gætte 1 password. 
+
+                Hvis man sammenligner det med sha256, så går man fra at kunne gætte 10 billioner passwords i sekundet til 3.613. Hvilket vil betyder at gætte passwords for en hacker pludslig
+                vil tage så lang tid at vi snakker flere hundrede år for at gætte hvert password. 
+            </p>
+            <p>
+                Men når det tager så lang tid, at gætte hvert password. Hvis man har flere tusind eller millioner af brugere. Så vil, ifølge Benjamin Donnelly<sup><a href="#footnotes">[4]</a></sup>
+                Så burde man ikke bruge bcrypt, fordi det vil ligge en stor belastning på ens servere fordi der er måske mange brugere der hele tiden tilgår ens service. Derfor mener han, man skal
+                bruge sha256 fordi det er så hurtig. Men for at få sikre mod bruteforce angreb, så skal man i stedet for bruge rigtigt lange passwords. Han mener man burde sikre at brugere mindst
+                skal bruge et password der er 26 karaktere langt. 
+            </p>
+            <p>
+                 Frank Rietta <sup><a href="#footnotes">[5]</a></sup> som arbejder som DevSecOps <sup><a href="#footnotes">[7]</a></sup> og har 16 års erfaringer inden for it-sikkerhed, 
+                 mener at man skal bruge bcrypt, og man under ingen omstændigheder må bruge sha256 fordi den er hurtig og man lige netop kan beregne flere billioner hashes i sekundet.
+            </p>
+            <p>
+                Men hvem har så ret, Frank Rietta med 16 års erfaring og arbejder som DevSecOps, eller Benjamin Donnelly som arbejder for SANS <sup><a href="#footnotes">[8]</a></sup> som pentester
+                Hvis man kigger på ethos så har Frank tydeligvis mere erfaring på området. På Riettas egen hjemmeside, finder man et tweet han har lavet til SANS <sup><a href="#footnotes">[8]</a></sup>
+                hvor han skriver at de burde ændre deres hashing forslag fra sha256 til bcrypt. Hefter rettere de det de selv har skrevet og giver Frank Rietta ret. Vi kunne stoppe her og sige det er 
+                overbevisende nok til at vi skal bruge bcrypt og ikke sha256 for password hashing, men lad os lige se på et andet virkligheds eksempel.
+            </p>
+            <p>
+                I little giants, her bruger de også bcrypt for deres password hashing. Men det står ikke alene, når en bruger logger på, så får de en refreshToken en refreshToken husker hvem 
+                man er logget på som. Det vil sige, at næstegang du vil tilgå din app, så behøver du ikke logge på, fordi du har en refresh token på din enhed. Man kan selv bestemme varigheden
+                af en refresh token, little giants har valgt at en refresh token er gyldig i ca 6 måneder. Så hvis du tilgår appen inden for 6 måneder, så får du en ny refresh token. 
+                Hvis vi så kigger tilbage på Benjamin Donnellys grund til ikke at bruge bcrypt fordi den er langsom og vil sætte store belastninger på ens system. Så bliver det slet ikke relevant,
+                idet man slet ikke logger på så tit. På den måde, holder man sikkerheden oppe itop i sin app uden at det har store påvirkninger på ens servere.
+            </p>
+            <p>
+                Der er stadig ulemper ved at bruge bcrypt, den har en svaghed som bliver beskrevet her <sup><a href="#footnotes">[1]</a></sup>. 
+                Der er en nyere hashing algoritme som hedder scrypt, som rettere på bcrypts svaghed. Grunden til at den ikke er blevet standard er at den ikke har klaret "test of time" endnu, 
+                scrypt er stadig forholdsvis ny, den er fra 2009, men først i 2016 blev den udgivet af IETF <sup><a href="#footnotes">[9]</a></sup> hvor bcrypt er fra 1999 <sup><a href="#footnotes">[10]</a></sup>
+                
+            </p>
             <h4>Kilder</h4>
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-            </ul>
+            <ol id="footnotes">
+                <li><a href="https://security.blogoverflow.com/2013/09/about-secure-password-hashing/">security.blogoverflow.com</a></li>
+                <li><a href="https://arstechnica.com/information-technology/2012/12/25-gpu-cluster-cracks-every-standard-windows-password-in-6-hours/">arstechnica.com</a></li>
+                <li><a href="https://gist.github.com/epixoip/63c2ad11baf7bbd57544">github.com/epixoip/</a></li>
+                <li><a href="https://blog.benpri.me/blog/2019/01/13/why-you-shouldnt-be-using-bcrypt-and-scrypt/">blog.benpri.me</a></li>
+                <li><a href="https://rietta.com/about/frank-rietta/">rietta.com</a></li>
+                <li><a href="https://rietta.com/blog/bcrypt-not-sha-for-passwords/">rietta.com bcrypt for passwords</a></li>
+                <li><a href="https://www.youtube.com/watch?v=nrhxNNH5lt0">What is DevSecOps</a></li>
+                <li><a href="https://www.sans.org/cloud-security/#resources/swat"></a>SANS.com</li>
+                <li><a href="https://datatracker.ietf.org/doc/html/rfc7914"></a>datatracker.ietf.org</li>
+                <li><a href="https://www.usenix.org/legacy/events/usenix99/provos/provos_html/node1.html"></a>usenix.org</li>
+            </ol>
         </div>
     </div>
 </div>
@@ -47,10 +110,10 @@
             <h4></h4>
             <p></p>
             <h4>Kilder</h4>
-            <ul>
+            <ol>
                 <li><a href=""></a></li>
                 <li><a href=""></a></li>
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
@@ -118,12 +181,12 @@
             
             
             <h4>Kilder</h4>
-            <ul>
+            <ol>
                 <li><a
                         href="https://www.geeksforgeeks.org/json-web-token-jwt/">https://www.geeksforgeeks.org/json-web-token-jwt/</a>
                 </li>
                 <li><a href="https://www.base64url.com/">https://www.base64url.com/</a></li>
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
@@ -173,9 +236,9 @@ total værdi på hvor lang tid ens projekt burde tage ud fra den tidsestimering 
     Derfor gør clickup projekstyring rigtig nem, og overskuelig.
             </p>
             <h4>Kilder</h4>
-            <ul>
+            <ol>
                 <li><a href="https://clickup.com"> https://clickup.com/</a></li>
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
@@ -201,9 +264,9 @@ Rento
             
             </p>
             <h4>Kilder</h4>
-            <ul>
+            <ol>
                 <li><a href="https://littlegiants.dk/"> https://littlegiants.dk/</a></li>
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
