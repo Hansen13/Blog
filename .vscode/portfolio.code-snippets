@@ -57,7 +57,7 @@
 "foot note reference": {
  "scope": "html",
  "description": "code snippet for referencing my footnote",
- "prefix": "referencefootnote",
+ "prefix": "referenceFootnote",
  "body": [
    "<sup><a href=\"#footnotes\">[$1]</a></sup>"
  ]
