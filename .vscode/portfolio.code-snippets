@@ -1,11 +1,11 @@
 {
-"code snippet for code snippet": {
+"code snippet for html code snippet": {
     "scope": "jsonc",
     "description": "template code snippet",
     "prefix": "codesnippet",
     "body": [
         "\"$1\": {",
-        " \"scope\": \"typescript\",",
+        " \"scope\": \"html\",",
         " \"description\": \"$2\",",
         " \"prefix\": \"$3\",",
         " \"body\": [",
@@ -52,6 +52,14 @@
         "</div>",
     "</div>",
 "</div>",
+ ]
+},
+"foot note reference": {
+ "scope": "html",
+ "description": "code snippet for referencing my footnote",
+ "prefix": "referencefootnote",
+ "body": [
+   "<sup><a href=\"#footnotes\">[$1]</a></sup>"
  ]
 }
 }
