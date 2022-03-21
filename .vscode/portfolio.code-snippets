@@ -61,5 +61,33 @@
  "body": [
    "<sup><a href=\"#footnotes\">[$1]</a></sup>"
  ]
-}
+}, 
+"IT-sikkerhed table": {
+ "scope": "html",
+ "description": "Table for IT-sikkerhed",
+ "prefix": "IT-sikkerhed-table",
+ "body": [
+   "<tr>",
+        "<td>IT-sikkerhed</td>",
+        "<td>$1</td>",
+        "<td>$2</td>",
+        "<td>$3</td>",
+        "<td>$4</td>",
+   "</tr>",
+ ]
+},
+"Projektstyrings table": {
+    "scope": "html",
+    "description": "Table for IT-sikkerhed",
+    "prefix": "Projekt-styring-table",
+    "body": [
+      "<tr>",
+      "<td>Projekt styring</td>",
+      "<td>$1</td>",
+      "<td>$2</td>",
+      "<td>$3</td>",
+      "<td>$4</td>",
+      "</tr>",
+    ]
+   }
 }
