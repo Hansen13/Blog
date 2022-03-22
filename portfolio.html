@@ -17,7 +17,7 @@
 
 <body>
     <h1>Velkommen til min portfolie</h1>
-    
+   
     <div>
         <h3>Links</h3>
         <ul>
@@ -30,18 +30,215 @@
     <div class="header">
         <h2>Blog indlæg 3</h2>
     </div>
+
+    
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
                 <h2>Projektstyring indlæg</h2>
-                <h5>18/03/22</h5>
-                <h4>Projektstyrings værktøjer for store teams</h4>
+                <h6>18/03/22</h6>
+                <h5>Projektstyrings værktøjer for store teams</h5>
                 <p>Indtil videre på min uddannelse har jeg kun arbejdet i små teams, hvor for har brugt scrum/kanban.</p>
-                <p>Her vil jeg gerne kigge på og sammenligne 2 andre projektstyrings værktøjer, SAFe og Crystal</p>
-                <h4>Kilder</h4>
+                <p>Her vil jeg gerne kigge på et scaled agilt framework som hedder SAFe.</p>
+                <p>Kort sagt, det SAFe prøver på er at gøre det muligt at lave agilt arbejde på kæmpe projekter. Det betyder så også at det ikke vil passe godt til små/få teams, vi snakker nemlig
+                    100+ mennesker til et projekt </p>
+
+                    <p>Nogle af de helt store fordele ved Safe</p>
+                    
+                    
+                        <li>Det er nemmere for virksomheden at få et overblik over hele projektet</li>
+                        <li>Det giver et gennemskueligt overblik over arbejdsflowet og kan dermed øge produktiviteten</li>
+                        <li>Gør at folk i teams tager mange af beslutningerne, uden at man skal have managerer til forvirre og gøre processen langsommere</li>
+                        <li>Lægger op til man skal lave PI (Porgram Increments)</li>
+                    
+                         
+                        <p>Det er alt mange fine ord, men hvad betyder det helt præcist?</p>
+                    
+                    
+                        <p>Først lad os se på hvordan man kan bruge SAFe, er findes 3 forskellige konfigurationer og 1 som er alle 3 kombineret</p>
+                        
+                            <li>Essential SAFe</li>
+                            <li>Large Solution SAFe</li>
+                            <li>Porfolio SAFe</li>
+                            <li>Full SAFe</li>
+
+                        <h5>Essential SAFe</h5>
+                        <p>essential SAFe er den mest basis version af SAFe, den kræver mindst muligt roller, begivenheder og artifakter for at succefuldt skalere med SAFe. 
+                            Det vigtigste element i essential SAFe er kaldt "Agile Release Train", og kort for ART. Et ART formål referere til agile teams som sammen med nogle stakeholders laver
+                            en PI, udvikler og udgiver løsninger til det endelig produkt sammen. </p>
+                            <div class="imageFrame">
+                                <img src="assets/images/SAFe/safe-essential-big-picture.PNG">    
+                            </div>
+                            <p>Et ART består typisk af 50-125 folk som kan arbejde sammen på tværs af hinanden, det består af ca 5-12 agile teams. Hvert team består af 5-11 personer.
+                                Grunden til den størrelse på et ART er så stor, er fordi den indeholde folk som kan alt som ses på billedet herunder. 
+                            </p>
+                            <div class="imageFrame width">
+                                <img src="assets/images/SAFe/safe-agile-release-train.PNG" >
+                            </div>
+                            <p>Hvert team i et ART har medlemmer nok til at klare alle kernefunktioner som kræves for at lave et kvalitets produkt. Fordi SAFe er et overordnet værktøj til at skalere agilt så
+                                tager de stadig andre gode agile værktøjer i brug til individuelle teams. Hvert team på selv vælge hvordan de vil arbejde, de primære er scrum, Kanban og Extreme programming. Men det 
+                                er op til hvert team hvad der giver mest mening at bruge. Hvert team har også to special roller, nemlig en scrum master og Product Owner </p>
+                                <div class="imageFrame">
+                                    <img src="assets/images/SAFe/safe-agile-release-train-functions.PNG">
+                                </div>
+
+<h6>Release Train Engineer</h6>
+<p>
+    Hvert ART har nogle kritiske roller som skal være i hvert ART. Vi har først en "Release Train Engineer" han vil stå for at styre retningen af hele ART og hjælper med at facilitere 
+    events og processer. Han vil også assistere teams så de fortsat leverer et produkt i høj kvaliet. Det er også hans job at varetage en kontakt med med stakeholders så han sikre vi altid 
+    er på rette vej. 
+</p>
+<h6>Produkt managment</h6>
+<p>
+    En produkt manager er primært ansvarlig for at definere og undersøtte produktet man er igang med at bygge. Han sammerabejder med et stor antal folk for at identificere og definere en kundes behov
+    Herudover står han også for at videre udvikle visionen for produktet og en roadmap så alle har en klar forståelse for hvilken retningen produktet har. De folk som de arbejder sammen med
+    for at løse deres opgave er typisk kunder, andre produkt managers, produkt ownere, andre ARTs osv for at forstå de forskellige folks behov og løse problemer.
+</p>
+<h6>System Architect/Engineer</h6>
+<p>
+    En System Architect/Engineer er ansvarlig for at, definere og kommunikere den overordnet arkitektur af systemet for et ART. Så de sikre sig at den del af systemet udvikler sig som forventet
+    og vil passe ind sammen med resten af systemets arkitektur. Han er også med til at analysere primære komponenter i et system og finder ud af hvilke systemer der skal bruges. 
+    Han står også for at lære snitfladerne for hvordan systemer skal kommunikere med hinanden.
+</p>
+<h6>Business Owners</h6>
+<p> 
+    En Business owner er en nøgle stakeholder og har ansvaret for at forretnings delen af et ARTs. De står til ansvar for at et ARTs levere værdi til det værdie produkt
+</p>
+<h6>Customers</h6>
+<p> 
+    Kunder er vigtige for at sikre man skaber noget værdi for dem, da de er primære brugere af systemet
+</p>
+<h6>System Teams</h6>
+<p>
+    Det er hold som assistere i at bygge og vedligeholde udviklingen, integere nye funktioner og teste udviklingsmiljø og programmet
+</p>
+<h6>Shared Services</h6>
+<p>
+    Sharded Services består af specialister som It-sikkerheds experter, informations arkitekter, database administratere osv. De er nødvendige for at et ART kan fungere. 
+    De kan dog ikke dedikeres til et bestemt ART, derfor kan de hoppe imellem dem alt efter hvor der er brug for deres assistance.
+</p>
+
+<h6>PI (Program Increment)</h6>
+
+<p>
+    Hvis vi kigger på PI som er en af de andre fordele ved SAFe. En PI er en timebox hvor et ARTs leverer inkremental værdi til det overordnede produkt i form af software som er testet grundigt og
+    virker som det skal. 
+    En PI Timebox varer mellem 8-12 uger, en PI indehole 4 udviklings iterationer og 1 innovations og planlægnings iteration. Et PI starter altid med et møde hvor alle teams i ART og 
+    de kritiske roller nævnt overover mødes og diskutere med ledere og managere hvilken retning og forhindringer der er forude. Efter mødet skal man have produceret nye opgaver som skal løses,
+    deadlines for nye features, relevante milepæle og hvilke opgaver har afhængigheder
+    
+
+</p>
+<p>
+    Efter hvert PI vil hvert agilt team begynde deres første iteration planlægning. Ligesom scrum, varer hver iteration 2 uger men kan gå op til 4 uger alt efter de individuelle teams behov.
+    Så hver iteration starter med en planlægnings fase, herfter udfører de arbejdet. Til sidst i en iteration holder hvert team et review og et retrospektive møde hvor de
+    ser på hvordan iterationen er gået. Herudover på hvordan det er gået, og rafinere deres product backlog. 
+</p>
+<p>
+    Idet der er mange teams i et ART bliver der lavet et system demo i slutningen af hver iteration, her vises alle nye features som projektet har fået over sidste iteration. 
+    Det giver ART stakeholders en mulighed for at se hvor langt er nået i en iteration og få en fornemmelse af projektet i sin helhed. Herudover vil der i slutningen af hvert PI blive lavet noget 
+    somer kaldt "Inspect and adapt" her vil alle ART stakeholders kunne se alle de features som er lave over alle iterationer. De ser programmets udvikling og på hvilke ting de gerne vil have 
+    forbedret eller er gode. På den måde får de også forbedret PI backlog så næste PI planning event har bedre formuleret backlog opgaver
+</p>
+<h6>Scrum of scrums</h6>
+<p>
+    Release Train Engineer holder ca 1 gang om ugen en "scrum of scrums". Det scrum of scrums gør, er at hjælpe forskellige agile teams med sammerabejde på komplekse opgaver som kræver 
+    stor koordination mellem teams. Scrum of scrums er Timeboxed til 30-60 minutter, med et møde efterfølgende hvor dem som har mere at diskutere kan det
+</p>
+<p>
+    Vi har også et andet event som hedder produkt owner synkronisering, her snakker produkt ownere og produkt managment med hinanden om deres ARTs retning og om det overordnede projekt kører i den rigtige retning. Sommetider vil man kombinere
+    scrum of scrums og produkt owner synkronisering til et event. Som kaldes for "agile release train sync"
+</p>
+<p>
+ Til at starte med nævnte jeg at en "PI indehole 4 udviklings iterationer og 1 innovations og planlægnings iteration". Men hvad er så innovations og planlægnings iteration. Kort sagt så indeholder den tid til innovation, mere uddannelse/kurser, PI planning og andre events
+
+</p>
+<h6>Essential SAFe opsummeret</h6>
+<p> 
+    Kort sagt, så er essential safe, hvis man har en virksomhed på omkring 50-125 personer og har brug for at kunne styrer flere teams på engang uden at miste overblikket. Det vil sige at det består af et enkelt ART til hele projektet. Men hvis man er flere folk så man skal bruge to ART, så man kigge på Large Solution SAFe som jeg vil gennemgå nu her.
+</p>
+
+<h5>Large Solution SAFe</h5>
+<p>
+    Hvis vi starter med at se på hvad en "Solution" er, så betyder det et produkt, service eller et system som bruges internt eller leveres externt til en kunde
+</p>
+<div class="imageFrame">
+    <img src="assets/images/SAFe/safe-large-solution-big-picture.png">
+</div>
+<p>
+    Ligesom billedet fra Essential SAFe, så er Large Solution SAFe det sammen, med en overbygning som ses på billedet her. Et af de nye koncepter er et "Solution Train", helt grundlagt så indeholder det flere Agile Release trains. Det bruges når man arbejder på kæmpe projekt som også er meget komplekst. Her bruges så solution train til at holde alle ARTs på samme kurs og sikre at de alle kører mod samme mål. Det vil også sige at alle ARTs følger sammen Program increment. Så alle stopper og starter på samme tidspunkt. Derudover indeholder det også suppliers, de er en intern eller extern som lever subsystemer eller services for at hele solution train kan nå sit mål, i følge SAFe kaldes de også for en "long-term Business partner".
+</p>
+<p>
+    Ligesom et ART har en Program backlog, så har vi også en overordnede backlog for hele solution toget. Ved Solution PI er det så her alle opgaver bliver delt ud fra solution backlog til de enklte ARTs backlog. Her har vi to "stories", den ene er user story som er meget velkendt. Den anden er en enabler story, en enabler story går ud på at give ekstra information til en user story. Enabler stories bruges også til at se alt arbejde som bliver nød til at ske forinden en user story kan laves. Primært bruges enabler stories til at udforske nye områder, udvikle arkitekturen eller forbedre infrastrukturen.
+
+</p>
+<p>
+    Derudover har vi også nogle ekstra roller, som er 
+    <li>Solution Architect/Engineer</li>
+    <li>Solution managment</li>
+
+    De ekstra roller står for at have overblikket over hele solution trainet, og sammerabejder med med ARTs Architect/Engineers og management for at få alle til at arbejde sammen. Et par af events går også igen på solution niveau, fx pre og post PI planning. Så events hvor man forbereder og følger op på PI til ARTs og suppliers i et solution train. Vi har også en demo, men her er det en solution demo. Så alle ARTs opgaver bliver vist i et projekt sammen. Vi har også et Inspect and adapt på solution niveau. Her vises det nuværende stadie som er opnået over alle ARTs, så det kan evalueres
+
+</p>
+<p>
+    Kort sagt, så er Large Solution SAFe meget ens til Essential SAFe. Her er der et niveau ovenpå som kan styrer alle ARTs og have et størrer overblik over hele projektet
+</p>
+<h5>Portfolio SAFe</h5>
+<p>
+    Portfolio SAFe bruger noget som hedder "value streams", der er to slags value streams, en "operational value stream" er beskrevet som en sekvens af aktiviteter der forvandler en forretnings hypotese. Det kunne være, fremstilling af produkter, oprette ordre  eller levere en service. Portfolio SAFe bruger, "development value streams" som er en sekvens af aktiviter som bruges til at udvikle og understøtte det produkt som en operational value stream giver. 
+</p>
+<div class="imageFrame">
+<img src="assets/images/SAFe/safe-portfolio-big-picture.PNG">
+</div>
+<p>
+    Portfolio SAFe handler om at forstå hvordan ens flow er i virksomheden. I stedet for at se projektet som en helhed, så deler man det op i mindre dele som vist på billedet under. På den måde kan man se hvilken del af processen som er langsom eller dyr. Efter man har fundet ens flaskehals i processen kan man så eliminere den eller gør den så lille som mulig. Dermed øger man produktiviten, sparer penge og får produkter hurtigere ud af døren. 
+</p>
+<div class="imageFrame">
+    <img src="assets/images/SAFe/safe-feature-request-value-stream.png">
+</div>
+<p>
+    Hvis man ser på skemaet under her, så forklarer de lean budget som at man skal investere i value streams ikke i et projekt. Ved at gøre det, giver man de rigtige dele af ens value stream de resourcer de har brug for så den del ikke bliver flaksehalsen. 
+</p>
+<div class="imageFrame">
+    <img src="assets/images/SAFe/safe-lean-budget.png">
+</div>
+<p>
+    Punkt to siger at man skal investere efter horizonten, det betyder at man skal se på hele ens produkts levetid. Billedet her under illustere de forskelige horizonter.
+    Horizont 3 starter man med at undersøge nye produkter ud fra en epic. Når man har fundet potentielle løsninger skal investering også øges da de skal have projektet op og køre. I tilfælde af man finder ud af det ikke bliver til noget skal man også afgive en del til at stoppe processen. Horizont 1 er når man har fået et godt produkt, det kræver en større investering da produktet skal i produktion og evt have forbedringer.
+
+    Sidste fase er når produktet har haft sin levetid og må stoppes, det kræver også en mindre investering. Men det vil også løsne op i budgettet til nye projekter.
+
+
+</p>
+<div class="imageFrame">
+    <img src="assets/images/SAFe/safe-horizon.png">
+    <label>Figure 1</label>
+</div>
+<div class="imageFrame">
+    <img src="assets/images/SAFe/safe-horizon-pie-chart.png">
+    <label>Figure 2</label>
+</div>
+<p>
+    Sidste punkt betyder deltagelsesbaseret budgetering, så portfolio stakeholders og virksomheds lederen. Det vil sige at alle får en fælles forståelse for hvorfor values streams får den investering de har brug for. 
+</p>
+<h5>Full SAFe</h5>
+<p>
+    Der er noget ekstra til full SAFe, der inkorpere essential SAFe, large solution SAFe og portfolio SAFe. Det er til de største projekter som også kræver budgetering.
+</p>
+                <h5>Kilder</h5>
                 <ol>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="https://scaledagile.com/what-is-safe/">scaledagile/what-is-safe</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=prlzeOQhHmg">youtube.com/scaled-agile-framework</a></li>
+                    <li><a href="https://www.scaledagileframework.com/essential-safe/">scaledagile/essential-safe</a></li>
+                    <li><a href="https://www.scaledagileframework.com/large-solution-safe/">scaledagile/large-solution-safe</a></li>
+                    <li><a href="https://www.scaledagileframework.com/portfolio-safe/">scaledagile/portfolio-safe</a></li>
+                    <li><a href="https://www.scaledagileframework.com/portfolio-vision/">scaledagile/portfolio-vision</a></li>
+                    <li><a href="https://www.scaledagileframework.com/development-value-streams/">scaledagile/development-value-streams</a></li> 
+                    <li><a href="https://www.scaledagileframework.com/safe-lean-agile-principles/">scaledagile/safe-lean-agile-principles</a></li>
+                    <li><a href="https://www.scaledagileframework.com/enablers/">scaledagile/enablers</a></li>
+                    <li><a href="https://www.scaledagileframework.com/lean-budgets/">scaledagile/lean-budgets</a></li>
+                    <li><a href="https://www.scaledagileframework.com/guardrails/">easyagile/lean-agile</a></li>
+                    <li><a href="https://www.easyagile.com/blog/lean-agile/">scaledagile/guardrails</a></li>
                 </ol>
             </div>
         </div>
@@ -69,7 +266,7 @@
                 "epixoip" <sup><a href="#footnotes">[3]</a></sup> fra github laves 3.613,81 gæt i sekundet hvis man bruger 8 GTX TitanX, som på daværende tidspunkt var verdens hurtigste grafik kort, og bruger bcrypts kost faktor på 10. 
 
                 <div class="imageFrame">
-                    <img src="assets\images\Bcrypt-hashes-in-seconds.PNG" alt="Bcrypt-hashes-in-seconds">
+                    <img src="assets\images\hashing\Bcrypt-hashes-in-seconds.PNG" alt="Bcrypt-hashes-in-seconds">
                 </div>
             </p>
 
@@ -166,7 +363,7 @@
             </p>
             <div class="imageFrame">
             
-                <img src="assets\images\jwtHeader.PNG" alt="jwtHeaderImage">
+                <img src="assets\images\jwt\jwtHeader.PNG" alt="jwtHeaderImage">
             </div>
             <h3>payload</h3>
             <p>
@@ -178,7 +375,7 @@
             </p>
             <div class="imageFrame">
             
-                <img src="assets\images\jwtpayload.PNG" alt="jwtPayloadImage">
+                <img src="assets\images\jwt\jwtpayload.PNG" alt="jwtPayloadImage">
             </div>
             <h3>Signatur</h3>
             <p>
