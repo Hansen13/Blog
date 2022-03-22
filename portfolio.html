@@ -26,6 +26,69 @@
             <li><a href="https://hansen13.github.io/Blog/learning"> Lærings Mål og læringsplan</a></li>
         </ul>
     </div>
+
+    <div class="header">
+        <h2>Blog indlæg 4</h2>
+        </div>
+        <div class="row">
+          <div class="leftcolumn">
+         <div class="card">
+        <h2>IT-sikkerhed indlæg</h2>
+        <h6>22/03/22</h6>
+        <h5>Hvilken hashing algoritme skal man vælge, og hvordan skifter man?</h5>
+        <p>
+            Når man kigger på password hashing så er der mange at vælge imellem, jeg snakkede i sidste it sikkerheds indlæg at sha256 ikke skal bruges til password hashing fordi det er en hurtig algoritme. Jeg nævnte også at bcrypt var gammel og scrypt ville være den nye. Fra 2013-2015 er der blevet afholdt en password hashing competition. Det blev gjort fordi der ikke var en standard lavet for hashing af passwords. Selvom bcrypt er den mest almindelige brugt som password hashing så har den stadig en svaghed overfor FPGA (Field Programmable Gate Arrays) kort sagt. Hackaday<sup><a href="#blog4footnotes">[1]</a></sup> har lavet en "quad fpga board". De har så lavet en lille server med 18 boards, altså 72 fpgas, de kunne i alt lave 2.1 millioner bcrypt hashes/sek. Og det brugte kun 585 watts. Hvis man skulle have samme præstation fra de bedste grafikkort idag (RTX-2080TI) så skulle man bruge 75 kort som i alt ville bruge 25 kilowatt. Det betyder det er super kost effektivt at bruge fpga til samme arbejde. Derudover ville 75 af de grafikkort også fulde en hel del mere.
+        </p>
+        <p>
+            Hvem vandt så den password hashing competition? det gjorde en Argon2<sup><a href="#blog4footnotes">[2]</a></sup>. Argon2 har nogle forskellige varianter
+            
+        </p>
+            <li>Argon2i</li>
+            <li>Argon2d</li>
+            <li>Argon2id</li>
+        <p>
+            Jeg vil kort lige gå over hvad de forskellige er
+        </p>
+        <h5>Argon2i</h5>
+        <p>
+            argon2i bruger data uafhængigs hukommelse, som er forstrukket for password hashing 
+        </p>
+        <h5>Argon2d</h5>
+        <p>
+            argon2d bruger data afhængigheds hukommelse hvilket gør den stærk mod GPU angreb, men er svag overfor side-channel timing angreb
+        </p>
+        <h5>Argon2id</h5>
+        <p>
+            argon2id er en hybrid mellem de to, den er både stærk mod side-channel timing angreb men også stræk imod GPU angreb
+        </p>
+        <p>
+            argon2id er derfor rigtig god til password hashing da det er en kombination af dem begge. Derudover anbefaler OWASP også at man bruger argon2id til alle nyere applikationer. I tilfælde af man bruge ældre systemer som ikke kan bruge argon2id, så er bcrypt okay
+        </p>
+        <h4>Hvordan skifter password hashing algoritme på en produktions database?</h4>
+        <p>
+            Hvis man har en databasen som er i produktion, hvordan skifter man så lige over uden at det irritere ens brugere. Jeg kom på 2 muligheder, man kan tage alle ens hashed passwords i databasen og hash dem med argon2id. Det fandt jeg så hurtigt ud af var en dårlig ide, Anthony Ferrara har skrevet et blog om<sup><a href="#blog4footnotes">[3]</a></sup> en kæmpe sikkerheds fejl som det kan indebære at kombinere sha256 og bcrypt. Kort sagt, så skærer bcrypt noget af hashet fra hvis den finder en null-byte som kommer fra sha256, det resultere i at ens hashet password bliver væsenligt kortere og dermed bliver det nemmere at finde et andet hash som kan kollidrer med ens password. Selvom vi snakker om bcrypt til argon2id her, så ved man ikke hivlke svagheder det kan indebærer. Derfor råder han en til at man helst bruger en enkelt hashing algroritme og ikke kombinere dem
+        </p>
+        <p>
+            Den anden mulighed jeg kom på var at når en bruger logger ind, så verificere man det input med det bcrypt hash som ligger i databasen, derefter så hasher man det med argon2id og lægger det ned i databasen i stedet for. På den måde har man bytte hashet ud med argon2id, og bruger har ikke skulle gøre noget ekstra, så næste gang de logger ind, så bliver de verificeret med argon2id i stedet for. 
+        </p>
+        <p>
+            Det vil så kræve at man i en period har både bcrypt og argon2id hash i sin database, det kræver at alle logger ind ellers vil deres password aldrig blive hashet om. Det er der desværre ikke rigtig nogen måde at komme uden om på. Det man kan vælge at gøre, er at efter et valgt stykke tid, fx 1 år, så kan man sende en mail til de brugere som stadig har brcrypt hashet passwords at de gerne må logge ind for nærmeste fremtid, ellers får de en mail om at lave et nyt password. Det nye password vil så selvfølgelig blive hashet med argon2id. På den måde får man en rolig overgang til argon2id uden at det påvirker særlig mange brugere
+        </p>
+        <h5>Proof of concept</h5>
+        <p>
+            Jeg har derfor lavet et lille proof of concept program som viser at man får skiftet hashing algoritme uden at man mærker forskel i login. Den kan hentes på min <a href="https://github.com/Hansen13/argon-test/blob/master/readme.md">github</a>. 
+        </p>
+
+        <h4>Kilder</h4>
+        <ol id="blog4footnotes">
+        <li><a href="https://hackaday.com/2020/05/15/all-your-passwords-are-belong-to-fpga/">hackaday/all-your-passwords-are-belong-to-fpga</a></li>
+        <li><a href="https://github.com/P-H-C/phc-winner-argon2/blob/master/README.md">argon2</a></li>
+        <li><a href="https://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html">blog.ircmaxell.com/security-issue-combining-bcrypt-with</a></li>
+        </ol>
+        </div>
+        </div>
+        </div>
+
     
     <div class="header">
         <h2>Blog indlæg 3</h2>
