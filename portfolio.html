@@ -78,7 +78,27 @@
         <p>
             Jeg har derfor lavet et lille proof of concept program som viser at man får skiftet hashing algoritme uden at man mærker forskel i login. Den kan hentes på min <a href="https://github.com/Hansen13/argon-test/blob/master/readme.md">github</a>. 
         </p>
+        <p>
+            Uddseenet på webside er den ene side hvor man laver sin bruger, som den hasher med bcrypt. Herefter er der et dialog vindue, den fortæller hvad der sker inden bagved når man trykker på de to knapper. Til højre har vi login ind siden. På første billede har jeg oprettet en bruger med brugernavnet "test" og kodeordet "test". Når jeg trykker på login, har jeg lavet et sted under "opret" knappen som viser ens username og password som er hashet til bcrypt
 
+        </p>
+        <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-hashed-with-bcrypt.PNG">
+        </div>
+        <p>
+            På næste billede logger jeg ind, i dialog vinduet fortæller den at den har verificeret mit password med bcrypt, da det var brcrypt hash som lå i databasen. Herefter fortæller den at mit password nu er hashet med argon2id, og det hash er blevet lagt i databasen. 
+        </p>
+        <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-vertified-with-bcrypt-hashed-with-argon2id.PNG">
+        </div>
+
+        <p>
+På sidste billede her trykker jeg på login endnu engang. Her fortæller den at mit password er blevet verificeret med argon2id, og vi er nu logget ind. 
+Alt det sker i baggrunden, og kunden vil ikke blive påvirket af vores ændering ved at skifte hashing algoritme.
+        </p>
+         <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-vertified-with-argon2id.PNG">
+        </div>
         <h4>Kilder</h4>
         <ol id="blog4footnotes">
         <li><a href="https://hackaday.com/2020/05/15/all-your-passwords-are-belong-to-fpga/">hackaday/all-your-passwords-are-belong-to-fpga</a></li>
@@ -287,6 +307,9 @@
 <h5>Full SAFe</h5>
 <p>
     Der er noget ekstra til full SAFe, der inkorpere essential SAFe, large solution SAFe og portfolio SAFe. Det er til de største projekter som også kræver budgetering.
+</p>
+<p>
+    Jeg kan ikke bruge SAFe frameworket i praksis. Men hvis man kigger overordnet på det, så virker det til at fungere for mange firmaer. En ting jeg synes de gør godt, er at de prøver ikke at opfinde deres egne agile metoder, men de bruger andre agile metoder som scrum og lean som fungerer. Det de har fundet ud af at skalere med dem som grundsten. Hvis man ser på deres kerne, så er det små teams som bruger scrum/kanban til at arbejde. Altså noget vi allerede kender til, de bygger så alt infrastrukturen uden om dem med deres Agile release train så man kan arbejde mange teams sammen om et projekt.
 </p>
                 <h5>Kilder</h5>
                 <ol>
