@@ -36,24 +36,6 @@ body {
   padding: 20px;
 }
 
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-color: black;
-  border: 1px solid;
-  border-radius: 25px;
-}
-
-.imageFrame {
-  background-color: lightgray;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 8px;
-  width: fit-content;
-}
-
 /* Clear floats after the columns */
 .row:after {
   content: "";

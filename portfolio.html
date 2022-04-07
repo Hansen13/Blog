@@ -12,27 +12,66 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  
+    <link rel="stylesheet" href="global.css">
     <title>Portfolio</title>
 </head>
 
 <body>
     <h1>Velkommen til min portfolie</h1>
    
-    <div>
-        <h3>Links</h3>
-        <ul>
-            <li><a href="https://hansen13.github.io/Blog/">Forside</a></li>
-            <li><a href="https://hansen13.github.io/Blog/portfolio">Portfolie</a></li>
-            <li><a href="https://hansen13.github.io/Blog/learning"> Lærings Mål og læringsplan</a></li>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="https://hansen13.github.io/Blog/">Forside</a></li>
+          <li><a href="https://hansen13.github.io/Blog/portfolio">Portfolie</a></li>
+          <li><a href="https://hansen13.github.io/Blog/learning"> Lærings Mål og læringsplan</a></li>
         </ul>
-    </div>
+      </div>
+    </nav>
 
     <div class="header">
         <h2>Blog indlæg 4</h2>
         </div>
+
+<div class="row">
+ <div class="leftcolumn">
+ <div class="card">
+ <h2>Projekt styring</h2>
+  <h6>01/04/22</h6>
+  <h5>Hvordan har vi lavet projekt styring til rento</h5>
+  <p>
+     Det første vi begyndte på var at lave en risikovurdering for projektet. Den kom desværre hurtigt i brug, idet vi mistede to medlemmer inden projektet gik i gang. Vores plan for at miste et medlem var at snakke med Alan, det gjorde vi. Og fik hurtigt to nye medlemmer, så vi igen var en gruppe på fire medlemmer. Herefter fik vi lavet vejledningsplan, så vi havde styr på hvornår hvert team medlem i gruppen skulle til guild, produkt og process møder. Herefter fik vi lavet en produktbeskrivelse, så vi havde en klar definition på hvad produktet var. Hvert medlem har 2 emner, dem lavede vi også en beskrivelse for hvordan de skulle passe ind i projektet. Ellers måtte vi finde på et lille sideprojekt som kunne laves til at fremvise hvad man har lært.  
+  </p>
+  <p>
+      Den næste store opgave var at få styr på domænet, her lavede vi en workshop med vores PO. Den gik ud på at få spurgt ind til alle krav vores app Rento skulle have. Efter at have fået styr på alle krav til Rento, gik vi igang med at dele opgaver op så de ikke var Epics. 
+  </p>
+  <p>
+      Firmaet vi arbejder sammen med, littlegiants, bruger clickup som deres projektstyrings værktøj. Derfor gik vi igang med at lave en kæmpe backlog. Hvor vi skrev user stories og et issue til frontend og backend. Efter at have fået skrevet issues til alle krav, begyndte vi at tidsestimere alle issues. Vi havde lidt over 100+ issues med en smalet tidsestimering på ca 450 timer.
+  </p>
+  <p>
+      I forholdt til tidligere projekter vi har lavet i skolen, har vi ikke gået op i at lave en lige så grundig kravindsamling og tidsestimering af alle issues. Ofte ved tidligere projekter har vi haft en overordnede manglende kravindsamling. Og som projketet er skrevet fremad har vi tilføjet nye features når vi lige følte for det. Det har givet en meget uklar vision af det endelig produkt, og tit periode hvor man måske ikke fik lavet så meget fordi man var i tvivl om hvad man lige skulle gå igang med. 
+  </p>
+  <p>
+      Kigger vi så på vores projekt Rento, så har vi en klar vision af hvad der skal laves i projektet for at opnå vores minimum viable product (MVP). Efter 2 måneder havde vi lavet mange basis opsætning på projektet og var kommet godt ind i det. Tilsammen var vi nået 33%, og følte at vi var klar til at have ugentlige updateringer med PO. Agendaen på de møder var at holde PO opdateret på projektet og fortælle hvor langt vi var kommet. Fordi vi havde lavet tidsestimeringer på projektet var det muligt for clickup at lave en udregning på hvor langt vi var. Derfra fik vi nemlig de 33%. Det fik vi meget positiv feedback på fra PO, og det var kun muligt fordi vi havde lavet tidsestimeringer. Udover at opdatere PO med fremgangen af projektet var andet punkt på vores agenda at stille spørgsmål, hvis vi er blevet i tvivl om noget angående kravene eller ligende. 
+  </p>
+  <p>
+      Selvom vi har lavet mange af projektstyrings opgaver som kravindsamling, lave user stories og issues, så har vi virklig gået i dybden med de opgaver den her gang. Det synes jeg har gjort den helt store forskel i forholdt til vores tidligere projekter. En anden stor gamechanger som vi ikke har gjort brug af før, er tidsestimering. At tilføje tidsestimering på ens issues får en til at tænke over hvor lang tid det vil tage de forskellige issues at lave. Derudover vil kunder også rigtig gerne have at vide hvor lang tid en app tager at lave, idet de skal betale for den. Så at lære at tidsestimere er en værdifuld evene at have når man skal programmere. 
+  </p>
+  <h5>Kilder</h5>
+  <ul>
+      <li><a href="https://clickup.com"> https://clickup.com/</a></li>
+  </ul>
+</div>
+</div>
+</div>
+
+
+
         <div class="row">
           <div class="leftcolumn">
          <div class="card">
+
+
         <h2>IT-sikkerhed indlæg</h2>
         <h6>22/03/22</h6>
         <h5>Hvilken hashing algoritme skal man vælge, og hvordan skifter man?</h5>
@@ -78,7 +117,27 @@
         <p>
             Jeg har derfor lavet et lille proof of concept program som viser at man får skiftet hashing algoritme uden at man mærker forskel i login. Den kan hentes på min <a href="https://github.com/Hansen13/argon-test/blob/master/readme.md">github</a>. 
         </p>
+        <p>
+            Uddseenet på webside er den ene side hvor man laver sin bruger, som den hasher med bcrypt. Herefter er der et dialog vindue, den fortæller hvad der sker inden bagved når man trykker på de to knapper. Til højre har vi login ind siden. På første billede har jeg oprettet en bruger med brugernavnet "test" og kodeordet "test". Når jeg trykker på login, har jeg lavet et sted under "opret" knappen som viser ens username og password som er hashet til bcrypt
 
+        </p>
+        <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-hashed-with-bcrypt.PNG">
+        </div>
+        <p>
+            På næste billede logger jeg ind, i dialog vinduet fortæller den at den har verificeret mit password med bcrypt, da det var brcrypt hash som lå i databasen. Herefter fortæller den at mit password nu er hashet med argon2id, og det hash er blevet lagt i databasen. 
+        </p>
+        <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-vertified-with-bcrypt-hashed-with-argon2id.PNG">
+        </div>
+
+        <p>
+På sidste billede her trykker jeg på login endnu engang. Her fortæller den at mit password er blevet verificeret med argon2id, og vi er nu logget ind. 
+Alt det sker i baggrunden, og kunden vil ikke blive påvirket af vores ændering ved at skifte hashing algoritme.
+        </p>
+         <div class="imageFrame">
+            <img src="assets/images/argon2Program/password-vertified-with-argon2id.PNG">
+        </div>
         <h4>Kilder</h4>
         <ol id="blog4footnotes">
         <li><a href="https://hackaday.com/2020/05/15/all-your-passwords-are-belong-to-fpga/">hackaday/all-your-passwords-are-belong-to-fpga</a></li>
@@ -287,6 +346,9 @@
 <h5>Full SAFe</h5>
 <p>
     Der er noget ekstra til full SAFe, der inkorpere essential SAFe, large solution SAFe og portfolio SAFe. Det er til de største projekter som også kræver budgetering.
+</p>
+<p>
+    Jeg kan ikke bruge SAFe frameworket i praksis. Men hvis man kigger overordnet på det, så virker det til at fungere for mange firmaer. En ting jeg synes de gør godt, er at de prøver ikke at opfinde deres egne agile metoder, men de bruger andre agile metoder som scrum og lean som fungerer. Det de har fundet ud af at skalere med dem som grundsten. Hvis man ser på deres kerne, så er det små teams som bruger scrum/kanban til at arbejde. Altså noget vi allerede kender til, de bygger så alt infrastrukturen uden om dem med deres Agile release train så man kan arbejde mange teams sammen om et projekt.
 </p>
                 <h5>Kilder</h5>
                 <ol>
