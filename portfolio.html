@@ -37,25 +37,289 @@
  <div class="leftcolumn">
  <div class="card">
  <h2>IT-sikkerhed indlæg</h2>
-  <h6>07/05/22</h6>
+  <h6>04/05/22</h6>
   <h5>Risiko analyse af vores app</h5>
   <p>
-    Jeg vil analysere de IT-sikkerheds risikoer der kan være ved den app vi har lavet og hvilke foranstaltninger vi vil/kan tage imod dem
+    Jeg vil analysere de IT-sikkerheds risikoer der er ved projektet efter det er blevet lanceret. Så vil jeg komme ind på hvilke foranstaltninger vi vil/kan tage imod dem
   </p>
-  <ol>
-      <li>DDoS angreb</li>
-      <li>Reverse engineer app</li>
-      <li>Misbrug API</li>
-      <li>3 parts integrationer ( I digital ocean)</li>
-      <li>Could baseret</li>
-      <li>Mongo server er hosted i mongos eget server</li>
-      <li>NPM</li>
-      <li>Dawa (Fx er alternativer google, men kig på oppe tid, 99,99% hvis ikke 100% det meste af tiden)</li>
-  </ol>
+  <table class="striped tableBorder">
+    <thead>
+      <tr>
+          <th></th>
+          <th>Økonomisk</th>
+          <th>Sårbarhed</th>
+          <th>Sandsynlighed</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>DDoS angreb på server</td>
+        <td>Høj</td>
+        <td>Høj</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Reverse engineer app</td>
+        <td>Lav</td>
+        <td>Mellem</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Misbrug API</td>
+        <td>Høj</td>
+        <td>Lav</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Digital Ocean går ned3 parts integrationer ( I digital ocean)</td>   
+        <td>Høj</td>
+        <td>Lav</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Database server er hosted ved mongo</td>
+        <td>Høj</td>
+        <td>Lav</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Node Package Manager (npm)</td>
+        <td>Høj</td>
+        <td>Mellem</td>
+        <td>Lav</td>
+      </tr>
+      <tr>
+        <td>Dawa Vej visning </td>
+        <td>Lav</td>
+        <td>Lav</td>
+        <td>Lav</td>
+      </tr>
+    </tbody>
+  </table>
+<p>
+
+    Efter jeg har vurderet de økonomiske konsekvener, sårbarheden og Sandsynligheden for de forskellige trussler. Så vil jeg kombinere de tre vurderinger, først vurders de økonomiske konsekvenser og sårbarheden efter dette skemaet
+</p>
+
+  <table class="striped tableBorder">
+      <thead>
+          <tr></tr>
+          <th></th>
+          <th>Lav</th>
+          <th>Mellem</th>
+          <th>Høj</th>
+          <tr></tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th>Lav</th>
+              <td>Lav</td>
+              <td>Mellem</td>
+              <td>Mellem</td>
+            </tr>
+            <tr>
+                <th>Mellem</th>
+                <td>Mellem</td>
+                <td>Mellem</td>
+                <td>Høj</td>
+            </tr>
+            <tr>
+                <th>Høj</th>
+                <td>Mellem</td>
+                <td>Høj</td>
+                <td>Høj</td>
+            </tr>
+      </tbody>
+  </table>
+
+  <p>
+      Delresultaterne af Økonomisk og sårbarheden er sammenlignet
+  </p>
+
+  <table class="striped tableBorder">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Resultat</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>DDoS angreb på server</td>
+          <td>Høj</td>
+        </tr>
+        <tr>
+          <td>Reverse engineer app</td>
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Misbrug API</td>
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Digital Ocean går ned3 parts integrationer ( I digital ocean)</td>   
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Database server er hosted ved mongo</td>
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Node Package Manager (npm)</td>
+          <td>Høj</td>
+        </tr>
+        <tr>
+          <td>Dawa Vej visning </td>
+          <td>Lav</td>
+        </tr>
+      </tbody>
+  </table>
+
+
+  <p>
+      Efter delresultaterne er beregnet skal de resultater beregnes sammen med sansynligheden. De beregnes efter denne tabel
+  </p>
+
+  <table class="striped tableBorder">
+    <thead>
+        <tr></tr>
+        <th></th>
+        <th>Lav</th>
+        <th>Mellem</th>
+        <th>Høj</th>
+        <tr></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Lav</th>
+            <td>Lav</td>
+            <td>Lav</td>
+            <td>Mellem</td>
+          </tr>
+          <tr>
+              <th>Mellem</th>
+              <td>Lav</td>
+              <td>Mellem</td>
+              <td>Høj</td>
+          </tr>
+          <tr>
+              <th>Høj</th>
+              <td>Mellem</td>
+              <td>Høj</td>
+              <td>Høj</td>
+          </tr>
+    </tbody>
+</table>
+
+<p>
+    På tabellen neden under har vi en samlet risiko vurdering af alle punkterne
+</p>
+<h6>Samlet risikovurdering</h6>
+<table class="striped tableBorder">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Resultat</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>DDoS angreb på server</td>
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Reverse engineer app</td>
+          <td>Lav</td>
+        </tr>
+        <tr>
+          <td>Misbrug API</td>
+          <td>Lav</td>
+        </tr>
+        <tr>
+          <td>Digital Ocean går ned3 parts integrationer ( I digital ocean)</td>   
+          <td>Lav</td>
+        </tr>
+        <tr>
+          <td>Database server er hosted ved mongo</td>
+          <td>Lav</td>
+        </tr>
+        <tr>
+          <td>Node Package Manager (npm)</td>
+          <td>Mellem</td>
+        </tr>
+        <tr>
+          <td>Dawa Vej visning </td>
+          <td>Lav</td>
+        </tr>
+      </tbody>
+  </table>
+  <p>
+      Efter at have lavet en samlet vurdering af alle punkter skal der laves en handle plan for hvad man gør/vil gøre hvis skaden sker.
+  </p>
+  <table class="striped tableBorder">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Risikovurdering</th>
+            <th>Eksisterende sikring</th>
+            <th>Handlingsplan</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>DDoS angreb på server</td>
+          <td>Mellem</td>
+          <td>Ingen Eksisterende sikring. Digital Ocean som bruges til hosting af server har ingen ddos beskyttelse, selvom konsekvenserve er store, så er sandsynligheden så lav at der ikke tages nogle forbehold  </td>
+          <td>Skifte til couldflare da de har indbygget ddos beskyttelse</td>
+        </tr>
+        <tr>
+          <td>Reverse engineer app</td>
+          <td>Lav</td>
+          <td>Appen bliver compiled så det er svært at decompile den. </td>
+          <td>Finde ud af hvor store konsekvenser det rent faktisk giver idet, de kun vil have adgang til frontend. Ellers kan man beskytte sig ved hjælp af Talsec som er et firma der kan hjælpe med at beskytte sin app imod reverse enigneering</td>
+        </tr>
+        <tr>
+          <td>Misbrug API</td>
+          <td>Lav</td>
+          <td>Alle API endpoints er sikret i graphQL med guards eller validators som sikre at sanitere inputs eller nægte adgang hvis man ikke har det</td>
+          <td>Evt luk ned for servere hvis det er et seriøst problem. Find ud af hvordan vores API er blevet misbrugt og sikre den mod ydereligere angreb</td>
+        </tr>
+        <tr>
+          <td>Digital Ocean går ned parts integrationer</td>   
+          <td>Lav</td>
+          <td>Digital ocean som hoster vores backend og andre 3 parts integrationer har en uptime på over 99%. Derfor er de meget pålidelige og der burde ikke gøres yderligere</td>
+          <td>I tilfælde af at der er stor problemer, skift til en anden udbyder</td>
+        </tr>
+        <tr>
+          <td>Database server er hosted ved mongo</td>
+          <td>Lav</td>
+          <td>MongoDb atlas hoster vores database, de har en uptime på over 99%. Derfor er de meget pålidelige og der burde ikke gøres yderligere</td>
+          <td>I tilfælde af at der er stor problemer, skift til en anden udbyder</td>
+        </tr>
+        <tr>
+          <td>Node Package Manager (npm)</td>
+          <td>Mellem</td>
+          <td>Mange pakker i npm kan få sikkerheds problemer over tid. Den eksisterende sikring er kun er bruge pakker som har været ude i lang tid og har et stort bruger antal. Derfor burde de være testet for de fleste fejl og derfor mere pålidlige at bruge</td>
+          <td>Lukke server ned hvis det er en seriøs fejl i en pakke, ellers få fejlen fikset og sendt med i den næste opdatering af appen</td>
+        </tr>
+        <tr>
+          <td>Dawa Vej visning </td>
+          <td>Lav</td>
+          <td>Dawa er en api til danmarks adresser. Hvis den går ned, er der ikke meget i appen som går i stykker. Derudover har de også en uptime på over 99%. Derfor er de meget pålidelige og der burde ikke gøres yderligere</td>
+          <td>Idet der ikke er meget i appen som går i stykker vil der ikke gøres noget. Et alternativ til hvis der bliver lukket kunne være at skifte til googles api for adresser i danmark</td>
+        </tr>
+      </tbody>
+  </table>
+  <p>
+      Selvom nogle af trusslerne har høje økonomiske konsekvener, så er sårbarheden overfor dem mellem eller lav, bortset fra DDoS angreb. Heldigvis er sansynligheden for dem alle lav. I tilfælde af at nogle af trusslerne viser sig at være reele, så viser handleplanen gode og effektive metoder til at modvirke angreb på vores app. Derfor har jeg ikke de store bekrymringer hvis det væreste skulle ske.
+  </p>
   <h4>Kilder</h4>
   <ol>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
+      <li><a href=""></a>IT-sikkerhed og risikovurdering dokument fra undervisningen</li>
   </ol>
 </div>
 </div>
@@ -66,7 +330,7 @@
  <h2>Projekt styrings indlæg</h2>
   <h6></h6>
   <h5></h5>
-  <p></p>
+  <p>Coming soon</p>
   <h4>Kilder</h4>
   <ol>
       <li><a href=""></a></li>
